@@ -43,7 +43,6 @@ h2 {margin: 2rem;}
    <div class="layui-form-item" align="center">
     <div class="layui-input-block">
       <button class="layui-btn" id="btn">闯 关</button>
-      <button class="layui-btn layui-btn-primary" id="resetbt">重 置</button>
     </div>
   </div>
 
@@ -58,13 +57,6 @@ h2 {margin: 2rem;}
 </body>
 
 <script type="text/javascript">
-
-	let resetbt = document.querySelector("#resetbt");
-    resetbt.addEventListener("click",function (params) {
-    	$("#token").text('');
-    	$("#num").text('1');
-
-    	});
 
 	let btn = document.querySelector("#btn");
     btn.addEventListener("click",function (params) {
