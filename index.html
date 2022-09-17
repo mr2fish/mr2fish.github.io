@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	let btn = document.querySelector("#btn");
         btn.addEventListener("click",function (params) {
-		let token = document.querySelector('token').value;
+		let token = document.querySelector("#token").value;
 		let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token;
 		axios.get(url).then(function (res) {
 			var data = res.data;
