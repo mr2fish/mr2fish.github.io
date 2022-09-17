@@ -13,15 +13,15 @@
 </body>
 
 <script type="text/javascript">
-	let token = document.querySelector('token').value;
-	let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token;
 	let btn = document.querySelector("#btn");
         btn.addEventListener("click",function (params) {
-            axios.get(url).then(function (res) {
-                var data = res.data;
-                console.log(data);
-		alert('闯关成功！');
-            });
+		let token = document.querySelector('token').value;
+		let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token;
+		axios.get(url).then(function (res) {
+			var data = res.data;
+			console.log(data);
+			alert('闯关成功！');
+		});
         });
 </script>
 
