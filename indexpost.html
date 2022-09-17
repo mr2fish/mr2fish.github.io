@@ -26,7 +26,7 @@ h2 {margin: 2rem;}
 	      	<label class="layui-form-label">uid</label>
 
 	      	<div class="layui-input-block">
-						<input class="layui-input" required  lay-verify="required" type="text" id="uid" ></input>
+					<input class="layui-input" required  lay-verify="required" type="text" id="userid"></input>
 					
 					</div>
 			</div>
@@ -75,17 +75,21 @@ h2 {margin: 2rem;}
 </body>
 
 <script type="text/javascript">
-	let uid = document.querySelector("#uid");
+	
 	let tokenbtn = document.querySelector("#tokenbtn");
     tokenbtn.addEventListener("click",function (params) {
-    	console.log("点击了tokenbtn");
+    	var userid = document.querySelector("#userid").value;
+    	console.log("userid:"+userid);
     	var url = "https://cat-match.easygame2021.com/sheep/v1/user/login_oppo";
-            var dataobj = {"uid": uid,"nick_name": "baidu","avatar": "https://www.baidu.com/favicon.ico","sex": 1};
-            var headersobj = {"Content-Type": "application/json",
+            var dataobj = {"uid": userid,"nick_name": "baidu","avatar": "https://www.baidu.com/favicon.ico","sex": 1};
+            var headersobj = {
     "Host": "cat-match.easygame2021.com",
     "Referer": "https://servicewechat.com/wx141bfb9b73c970a9/14/page-frame.html",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.27(0x18001b36) NetType/WIFI Language/zh_HK",};
-            axios.post(url,{params:dataobj},{headers:headersobj}).then(function (res) {
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.27(0x18001b36) NetType/WIFI Language/zh_HK",
+    "Content-Type": "application/octet-stream",
+          "Access-Control-Allow-Origin": "*"
+  };
+            axios.post(url,{params:dataobj}).then(function (res) {
                 console.log(res.data);
             });
 
