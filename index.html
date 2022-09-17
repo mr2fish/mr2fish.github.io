@@ -3,21 +3,25 @@
 <head>
 	<meta charset="utf-8">
 	<title>test</title>
-	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 <body>
-	<script>
-        $(function() {
-            $.ajax({
-                method: "get",
-                url: "https://cat-match.easygame2021.com/sheep/v1/game/game_over?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ0MDc2MjgsIm5iZiI6MTY2MzMwNTQyOCwiaWF0IjoxNjYzMzAzNjI4LCJqdGkiOiJDTTpjYXRfbWF0Y2g6bHQxMjM0NTYiLCJvcGVuX2lkIjoiIiwidWlkIjozNzAxNjU5LCJkZWJ1ZyI6IiIsImxhbmciOiIifQ.KJuk302OlHNa6YX8wRxdG-Z7De4bbF7XLFhcAsnLJeA&rank_score=1&rank_state=1&rank_time=888&rank_role=1&skin=1",
-                success: function(res) {
-                    console.log(res)
-                }
-            })
-        })
-    </script>
+	<input type="text" id="token"> </input>
 
 </body>
+<script type="text/javascript">
+function SubmitUserInfo() {
+	let token = document.getElementById('token').value;
+	let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token;
+	axios({
+		method: 'get',//提交方法
+		url: url
+		}).then((res) => {
+		console.log(res);
+		alert('闯关成功！');
+		})
+	}
+</script>
+
 </html>
