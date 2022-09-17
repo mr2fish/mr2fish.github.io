@@ -8,49 +8,67 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
 	<script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>
+	<style type="text/css">
+
+h2 {margin: 5rem;}
+.layui-form {margin-right: 3rem;margin-left: -3rem;}
+.layui-input-block{margin-top: 1rem;}
+</style>
 
 </head>
 <body>
-<div class="layui-row">
-    <div class="layui-col-xs6 layui-col-md12">
-      <div class="grid-demo grid-demo-bg2">
-	      
-	      <ul class="layui-nav layui-bg-cyan">
-				  <li class="layui-nav-item"><a href="">藏青导航</a></li>
-				  <li class="layui-nav-item"><a href="">产品</a></li>
-				  <li class="layui-nav-item"><a href="">大数据</a></li>
-				  <li class="layui-nav-item">
-				    <a href="javascript:;">解决方案</a>
-				    <dl class="layui-nav-child">
-				      <dd><a href="">移动模块</a></dd>
-				      <dd><a href="">后台模版</a></dd>
-				      <dd><a href="">电商平台</a></dd>
-				    </dl>
-				  </li>
-				  <li class="layui-nav-item"><a href="">社区</a></li>
-				</ul>
-		
-		
-			</div>
-    </div>
-		
-		<div class="layui-col-xs6 layui-col-md12">
-      <div class="grid-demo grid-demo-bg2">
-	      	token:<input type="text" id="token"></input></br>
-					次数:<input type="text" id="num"></input>
-					<button id="btn">闯关</button>
-					<h6 id="result"></h6>
-	    </div>
-    </div>
-	      
-  </div>
-	
 
+	<h2 align="center">羊了个羊闯关</h2>
+	<form class="layui-form" action="">
+
+  <div class="layui-form-item">
+  	
+
+	      	<label class="layui-input-block">token:</label>
+	      <div class="layui-input-block">
+	      	
+					<textarea id="token" placeholder="请输入token" required  lay-verify="required" class="layui-textarea" rows="10"></textarea>
+				</div>
+
+	</div>
+  <div class="layui-form-item">
+					<label class="layui-input-block">次数:</label>
+			<div class="layui-input-block">
+					<input class="layui-input"  required  lay-verify="required" type="text" id="num">1</input>
+
+			</div>
+
+  </div>
+<div class="layui-form-item" align="center">
+    <div class="layui-input-block">
+  <button class="layui-btn layui-btn-primary layui-border-red" id="numbt1">1次</button> 
+  <button class="layui-btn layui-btn-primary layui-border-red" id="numbt2">3次</button>
+  <button class="layui-btn layui-btn-primary layui-border-red" id="numbt3">10次</button>
+  <button class="layui-btn layui-btn-primary layui-border-red" id="numbt4">100次</button>
+      </div>
+  </div>
+
+   <div class="layui-form-item" align="center">
+    <div class="layui-input-block">
+      <button class="layui-btn" id="btn">闯 关</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重 置</button>
+    </div>
+  </div>
+
+   <div class="layui-form-item">
+    <div class="layui-input-block">
+      <h6 id="result"></h6>
+    </div>
+  </div>
+
+					
+</form>
 </body>
 
 <script type="text/javascript">
+
 	let btn = document.querySelector("#btn");
-        btn.addEventListener("click",function (params) {
+    btn.addEventListener("click",function (params) {
 		let token = document.querySelector("#token").value;
 		let num = document.querySelector("#num").value;
 		
