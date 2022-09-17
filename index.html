@@ -25,13 +25,15 @@
 		
 		let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token+'&rank_score=1&rank_state=1&rank_time=888&rank_role=1&skin=1';
 		
+		for(let index = 1;index <= num;index++){
 		axios.get(url).then(function (res) {
 			var data = res.data;
 			console.log(data);
-			alert('闯关成功！');
-			$("#result").text('闯关成功');
+			if(data.err_code == 0)
+				$("#result").text('闯关成功'+index+'次');
 			
 		});
+		}
         });
 </script>
 
