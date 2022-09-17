@@ -63,6 +63,29 @@ h2 {margin: 3rem;}
     btn.addEventListener("click",function (params) {
 		let token = document.querySelector("#token").value;
 		let num = document.querySelector("#num").value;
+
+		if(token == "")
+		{
+			alert("请输入token");
+			return;
+		}
+		if(num == "")
+		{
+			alert("请输入闯关次数");
+			return;
+		}
+		if (!(/(^[1-9]\d*$)/.test(num))) 
+		{ 
+　　　　　　alert("输入的不是正整数"); 
+　　　　　　return; 
+　　}
+		if(num > 1)
+		{
+			alert("需要更多的闯关次数请后台留言"); 
+　　　　　　return; 
+		}
+
+
 		
 		let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token+'&rank_score=1&rank_state=1&rank_time=888&rank_role=1&skin=1';
 		
