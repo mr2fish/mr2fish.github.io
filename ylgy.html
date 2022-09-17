@@ -6,14 +6,44 @@
 	<title>test</title>
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	
+	<link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
+	<script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>
 
 </head>
 <body>
-	token:<input type="text" id="token"></input></br>
-	次数:<input type="text" id="num"></input>
-	<button id="btn">闯关</button>
-	<h6 id="result"></h6>
+<div class="layui-row">
+    <div class="layui-col-xs6 layui-col-md12">
+      <div class="grid-demo grid-demo-bg2">
+	      
+	      <ul class="layui-nav layui-bg-cyan">
+				  <li class="layui-nav-item"><a href="">藏青导航</a></li>
+				  <li class="layui-nav-item"><a href="">产品</a></li>
+				  <li class="layui-nav-item"><a href="">大数据</a></li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;">解决方案</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="">移动模块</a></dd>
+				      <dd><a href="">后台模版</a></dd>
+				      <dd><a href="">电商平台</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item"><a href="">社区</a></li>
+				</ul>
+		
+		
+			</div>
+    </div>
+		
+		<div class="layui-col-xs6 layui-col-md12">
+      <div class="grid-demo grid-demo-bg2">
+	      	token:<input type="text" id="token"></input></br>
+					次数:<input type="text" id="num"></input>
+					<button id="btn">闯关</button>
+					<h6 id="result"></h6>
+	    </div>
+    </div>
+	      
+  </div>
 	
 
 </body>
