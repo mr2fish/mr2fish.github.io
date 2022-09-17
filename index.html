@@ -3,12 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>test</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	
 
 </head>
 <body>
-	<input type="text" id="token"></input>
+	token:<input type="text" id="token"></input></br>
+	次数:<input type="text" id="num"></input>
 	<button id="btn">闯关</button>
+	<h6 id="result"></h6>
+	
 
 </body>
 
@@ -16,11 +21,16 @@
 	let btn = document.querySelector("#btn");
         btn.addEventListener("click",function (params) {
 		let token = document.querySelector("#token").value;
+		let num = document.querySelector("#num").value;
+		
 		let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token+'&rank_score=1&rank_state=1&rank_time=888&rank_role=1&skin=1';
+		
 		axios.get(url).then(function (res) {
 			var data = res.data;
 			console.log(data);
 			alert('闯关成功！');
+			$("#result").text('闯关成功');
+			
 		});
         });
 </script>
