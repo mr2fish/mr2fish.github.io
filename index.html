@@ -8,20 +8,21 @@
 </head>
 <body>
 	<input type="text" id="token"> </input>
+	<button id="btn">闯关</button>
 
 </body>
+
 <script type="text/javascript">
-function SubmitUserInfo() {
 	let token = document.getElementById('token').value;
+	let btn = document.getElementById("#btn");
 	let url = 'https://cat-match.easygame2021.com/sheep/v1/game/game_over?t='+token;
-	axios({
-		method: 'get',//提交方法
-		url: url
-		}).then((res) => {
-		console.log(res);
+        btn.addEventListener("click",function (params) {
+            axios.get(url).then(function (res) {
+                var data = res.data;
+                console.log(data);
 		alert('闯关成功！');
-		})
-	}
+            });
+        });
 </script>
 
 </html>
